@@ -1,0 +1,454 @@
+*
+{
+    /* nous permet de ne pas modifier la largeur des éléments boîtes même si on leur met un padding (pour les colonnes) */
+    box-sizing: border-box;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img
+{
+    max-width: 100%;/* toutes les images ont une taille max qui est celle de leur parent */
+    
+}
+
+/* mes couleurs en variable */
+:root
+{
+    --blanc: #fff;
+    --gris-clair: #ddd;
+    --gris-transparant: rgba(0, 0, 0, 0.212);
+    --gris: rgb(155, 155, 155);
+    --gris-fonce: rgb(94, 94, 94);
+    --bleu-clair: #c1d2d9;
+    --bleu-fonce: #7bafc9;
+    --orange: orange;
+}
+
+/* Header */
+
+header
+{
+    /* border: 4px solid green; */
+    background-image: url(../img/bg.jpg);
+    background-size: cover;/* on couvre tout notre header */
+    background-position: center;/* on centre l'image */
+    background-repeat: no-repeat;/* on ne répète pas l'image*/
+    height: 90vh;/* ici vh signifie "viewport height" -> il représente 90% de l'écran de l'utilisateur, peu importe la taille de son écran*/
+}
+
+/* Partie navigation */
+header div#navigation /* on vise la partie #navigation */
+{
+    /* border: 3px solid black; */
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--gris-transparant);
+}
+
+header h1
+{
+    color: var(--blanc);
+    font-family: 'Ephesis', cursive;
+}
+
+/* nav appliqué si utilisation UL 
+{
+    
+    border: 3px solid red;
+     width: 30%;
+    display: flex;
+    justify-content: space-between;
+} */
+
+header nav a
+{
+    text-decoration: none;
+    color: var(--blanc);
+    border-radius: 30px;
+    padding: 15px 20px;
+    transition: 2s ease;
+}
+
+header nav a:last-of-type
+{
+    border: 2px solid var(--blanc);
+}
+
+header nav a:hover
+{
+    background-color: var(--bleu-fonce);
+}
+
+/* Partie en tête */
+header #en-tete
+{
+    text-align: center;
+    color: var(--blanc);
+}
+
+header #en-tete h2
+{
+    font-family: 'Ephesis', cursive;
+    font-size: 5em;
+    margin: 15px 0 0 0;
+    font-weight: lighter;
+    text-transform: capitalize;
+    line-height: 1em;
+}
+
+#en-tete p
+{
+    margin: 0;
+}
+
+/* Partie recherche */
+#recherche
+{
+    height: 10vh;
+    background-color: var(--bleu-clair);
+    color: var(--bleu-fonce);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#recherche p
+{
+    font-size: 1.3em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#recherche i
+{
+    font-size: 1.2em;
+}
+
+/* Main */
+
+.conteneur
+{
+    /* border: 4px solid red; */
+    width: 70%;
+    margin: 0 auto;
+
+}
+
+article div
+{
+    border: 1px solid var(--gris-clair);
+    position: relative;
+}
+
+.prix
+{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    background-color: var(--blanc);
+    padding: 15px 10px;
+    border: none;
+}
+
+div.texte
+{
+    padding: 15px;
+    border: none;
+}
+
+.texte h2{
+    font-size: 1em;
+    color: var(--gris-fonce);
+}
+
+.texte p{
+    font-size: 0.8em;
+    color: var(--gris);
+}
+
+/* le bouton pour 'voir plus' */
+.more
+{
+    /* border: 1px solid red; */
+    text-align: center;
+    height: 70px;
+}
+
+.more button
+{
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--bleu-fonce);
+    background-color: transparent;
+    color: var(--bleu-fonce);
+    transition: 1s ease;
+}
+
+.more button:hover
+{
+    background-color: var(--bleu-fonce);
+    color: var(--blanc);
+}
+
+/* Fin Main */
+
+/* Début footer */
+footer
+{
+    background-color: var(--bleu-fonce);
+    color: var(--blanc);
+    height: fit-content;
+}
+
+footer a
+{
+    color: var(--blanc);
+    text-decoration: none;
+}
+
+footer p
+{
+    line-height: 35px;
+}
+
+/* les icônes réseaux sociaux */
+footer i
+{
+    padding-right: 25px;
+    font-size: 1.2em;
+}
+
+footer a:hover
+{
+    color: var(--orange);
+}
+
+footer hr
+{
+    color: var(--blanc);
+    background-color: var(--blanc);
+}
+
+.copyright
+{
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+/* RANGÉE ET COLONNES */
+.row
+{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.col-1
+{
+    width: 8.333333%;
+    padding: 25px;
+}
+
+.col-2
+{
+    width: 16.6666%;
+    padding: 25px;
+}
+
+.col-3
+{
+    width: 25%;
+    padding: 25px;
+}
+
+.col-4
+{
+    width: 33.333333%;
+    padding: 25px;
+}
+
+.col-5
+{
+    width: 41.666666%;
+    padding: 25px;
+}
+
+.col-6
+{
+    width: 50%;
+    padding: 25px;
+}
+
+.col-7
+{
+    width: 58.333333%;
+    padding: 25px;
+}
+
+.col-8
+{
+    width: 66.666666%;
+    padding: 25px;
+}
+
+.col-9
+{
+    width: 75%;
+    padding: 25px;
+
+}
+
+.col-10
+{
+    width: 83.333333%;
+    padding: 25px;
+}
+
+col-11
+{
+    width: 91.666666%;
+    padding: 25px;
+}
+
+.col-12
+{
+    width: 100%;
+    padding: 25px;
+}
+
+
+
+/* RANGÉE ET COLONNES */
+.row
+{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.col-1
+{
+    width: 8.333333%;
+    padding: 25px;
+}
+
+.col-2
+{
+    width: 16.6666%;
+    padding: 25px;
+}
+
+.col-3
+{
+    width: 25%;
+    padding: 25px;
+}
+
+.col-4
+{
+    width: 33.333333%;
+    padding: 25px;
+}
+
+.col-5
+{
+    width: 41.666666%;
+    padding: 25px;
+}
+
+.col-6
+{
+    width: 50%;
+    padding: 25px;
+}
+
+.col-7
+{
+    width: 58.333333%;
+    padding: 25px;
+}
+
+.col-8
+{
+    width: 66.666666%;
+    padding: 25px;
+}
+
+.col-9
+{
+    width: 75%;
+    padding: 25px;
+
+}
+
+.col-10
+{
+    width: 83.333333%;
+    padding: 25px;
+}
+
+col-11
+{
+    width: 91.666666%;
+    padding: 25px;
+}
+
+.col-12
+{
+    width: 100%;
+    padding: 25px;
+}
+
+
+/* MEDIA QUERIES POUR CASA*/
+
+/* pour tablette */
+
+@media screen and (min-width:768px) and (max-width:991px) {
+
+    header div#navigation {
+        font-size: 14px;
+        background-color: blue;
+        width: 100%;
+        
+    }
+}
+
+    /* body{
+        background-color: rgb(92, 205, 182);
+    }
+    .col-4{
+        width: 50%;
+    }
+} */
+
+
+/* pour portable */
+
+@media screen and (max-width:767px) {
+    body{
+        background-color: indianred;
+    }
+    .col-4{
+        width: 100%;
+    }
+    /* .col-4, .conteneur, .col-2, .col-6 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        
+          
+    } */
+
+    
+}
+
+
